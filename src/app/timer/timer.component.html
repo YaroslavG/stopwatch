@@ -1,0 +1,18 @@
+<div class="container"> 
+	<section class="timer-counter-label">
+		<div *ngIf="counter" [ngClass]="{blink: !running}">
+			<span>{{minutes}}:</span><span>{{seconds}}:</span> <span>{{milliseconds}}</span> </div>
+		<div *ngIf="!counter">
+			<!-- <span class="blink timer-start-text">Press Start</span> -->
+			<!-- <br> -->
+			<span>{{minutes}}:</span><span>{{seconds}}:</span> <span>{{milliseconds}}</span>
+		</div>
+	</section>
+	<div class="timer-button-container" *ngIf="showTimerControls">
+		<button class="timer-button" (click)="startTimer()">
+			{{ startText }}
+		</button>
+		<button class="timer-wait-button" (dblclick)="waitTimer()">Wait</button>	
+		<button class="timer-button" (click)="resetTimer()">Reset</button>
+	</div>
+</div>
